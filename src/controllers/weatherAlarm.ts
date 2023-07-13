@@ -1,6 +1,9 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
 
+import { processData } from './hourPrediction/weatherUtils'; // Update the import statement
+
+
 export const currentWeather = async (req: Request, res: Response) => {
     try {
         const { longitude, latitude } = req.query;
@@ -15,33 +18,3 @@ export const currentWeather = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'An error occurred while fetching the weather data.' });
     }
 };
-
-export function processData(data: any) {
-    const currentHour = new Date().getUTCHours();
-    const hourlyData = data.hourly.time;
-
-    let timeID = null;
-    for (let i = 0; i < hourlyData.length; i++) {
-        const date = new Date(hourlyData[i]);
-        const hour = date.getUTCHours();
-
-        if (hour === currentHour) {
-            timeID = i;
-            break;
-        }
-    }
-
-    let processedWeatherData = null;
-    if (timeID !== null) {
-        processedWeatherData = processWeatherConditions(timeID, data.hourly);
-    }
-    return data;
-
-};
-
-export function processWeatherConditions(timeID: number, hourlyData: any) {
-
-    const weatherConditions = hourlyData[timeID].conditions;
-
-    return weatherConditions;
-}
