@@ -16,8 +16,9 @@ function processData(data) {
     let processedWeatherData = null;
     if (timeID !== null) {
         processedWeatherData = processWeatherConditions(timeID, data.hourly);
-        if (processedWeatherData !== null) {
-            processedWeatherData = processWeatherConditions(timeID + 1, data.hourly);
+        if (processedWeatherData.report == 'null') {
+            timeID = timeID + 1;
+            processedWeatherData = processWeatherConditions((timeID), data.hourly);
         }
     }
     return processedWeatherData;
@@ -29,28 +30,28 @@ function processWeatherConditions(ID, data) {
     if (data.snowfall[ID] >= 50) {
         weatherReport = {
             report: 'Heavy rain',
-            timezone: 'UCT',
+            timezone: 'GMT',
             time: `${ID - 1}:00`
         };
     }
     else if (data.rain[ID] >= 10) {
         weatherReport = {
             report: 'Heavy rain',
-            timezone: 'UCT',
+            timezone: 'GMT',
             time: `${ID - 1}:00`
         };
     }
-    else if (data.rain[ID] > 0 && (data.temperature[ID] <= 0)) {
+    else if (data.rain[ID] > 0 && (data.temperature_2m[ID] <= 0)) {
         weatherReport = {
             report: 'Hail',
-            timezone: 'UCT',
+            timezone: 'GMT',
             time: `${ID - 1}:00`
         };
     }
     else {
         weatherReport = {
             report: 'null',
-            timezone: 'UCT',
+            timezone: 'GMT',
             time: `${ID - 1}:00`
         };
     }

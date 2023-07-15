@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.currentWeather = void 0;
+exports.testFunction = exports.currentWeather = void 0;
 const axios_1 = __importDefault(require("axios"));
 const weatherUtils_1 = require("./hourPrediction/weatherUtils");
 const currentWeather = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -29,4 +29,22 @@ const currentWeather = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.currentWeather = currentWeather;
+const testFunction = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let id = 1;
+        console.log(id);
+        let rep = null;
+        if (id == 0) {
+            rep = { test: 'test' };
+        }
+        else {
+            rep = { test: 'nope' };
+        }
+        res.json(rep);
+    }
+    catch (error) {
+        res.status(500).json({ error: 'An error occurred while pooping.' });
+    }
+});
+exports.testFunction = testFunction;
 //# sourceMappingURL=weatherAlarm.js.map

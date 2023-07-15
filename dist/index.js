@@ -10,8 +10,10 @@ const port = 3000;
 app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
-app.listen(port, () => {
+app.get('/currentWeather', weatherAlarm_1.currentWeather);
+app.get('/testFunction', weatherAlarm_1.testFunction);
+const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-app.get('/currentWeather', weatherAlarm_1.currentWeather);
+exports.default = server;
 //# sourceMappingURL=index.js.map
