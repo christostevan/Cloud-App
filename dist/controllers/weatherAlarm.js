@@ -21,7 +21,7 @@ const nextDayWeather = (req, res) => __awaiter(void 0, void 0, void 0, function*
         const currentDate = new Date();
         currentDate.setDate(currentDate.getDate() + 1);
         const tomorrowDate = currentDate.toISOString().slice(0, 10);
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&start_date=${tomorrowDate}&end_date=${tomorrowDate}`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,soil_temperature_54cm&start_date=${tomorrowDate}&end_date=${tomorrowDate}`;
         const response = yield axios_1.default.get(url);
         const data = response.data;
         const processedData = yield (0, weatherCalculator_1.processNextDayWeather)(data.hourly);
