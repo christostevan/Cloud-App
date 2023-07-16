@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 
-import { currentWeather, testFunction } from './controllers/weatherAlarm';
+import { currentWeather } from './controllers/weatherAlarm';
 /**
  * Application startup 
  */
@@ -17,7 +17,6 @@ app.get('/', (req: Request, res: Response) => {
 // }); 
 
 app.get('/currentWeather', currentWeather);
-app.get('/testFunction', testFunction);
 
 const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

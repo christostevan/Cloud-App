@@ -22,21 +22,3 @@ export const currentWeather = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'An error occurred while fetching the weather data.' });
     }
 };
-
-export const testFunction = async (req: Request, res: Response) => {
-    try {
-        let id = 1;
-        console.log(id);
-        let rep =null;
-
-        if (id == 0) {
-            rep = {test : 'test'} ;
-        } else {
-            rep = {test : 'nope'} ;
-        } 
-
-        res.json(rep); 
-    } catch (error) {
-        res.status(500).json({ error: 'An error occurred while pooping.' });
-    }
-};
