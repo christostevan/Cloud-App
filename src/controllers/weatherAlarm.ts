@@ -4,8 +4,8 @@ import axios from 'axios';
 import { processNextDayWeather } from './nextDayPrediction/weatherCalculator'; // import classes for nextDayWeather
 
 /**
- * currentWeather - responsible for analysing location and respond with possibility of extreme weather conditions, within current and next hour.
- * @param data in currenWeather format from HTTP-request. Gather longitude, latitude.
+ * nextDayWeather - responsible for analysing location and respond with possibility of heat conditions, within the next day.
+ * @param data in nextDayWeather format from HTTP-request. Gather longitude, latitude.
  * @returns Weather alarm object
  */
 export const nextDayWeather = async (req: Request, res: Response) => {
