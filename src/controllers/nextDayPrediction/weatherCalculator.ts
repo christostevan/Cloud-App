@@ -8,19 +8,17 @@ export function processNextDayWeather(data: any) {
    let temperatureResult;
    let soilFrostResult;
 
-   console.log(data);
-
    if(data !== null) {
       temperatureResult = scanTemperature(data.temperature_2m); //scan if temperature exceeds set perameter.
       soilFrostResult = scanSoilFrost(data.soil_temperature_54cm); //scan if temperature exceeds set perameter.
    }
 
-   if(temperatureResult !== null){
+   if(temperatureResult == true){
       result = { //set return value, 
          result: true, //set as confirmed return
          type: 'Temperature' //type of reported weather condition 
       }
-   } else if(soilFrostResult !== null){
+   } else if(soilFrostResult == true){
       result = { //set return value, 
          result: true, //set as confirmed return
          type: 'Soil frost' //type of reported weather condition 
@@ -40,19 +38,17 @@ export function processNextDayWeather(data: any) {
  * @returns JSON-format with determined weather conditions.
  */
 export function scanTemperature(data: any) {
-   let result = null;
-
-   for (const item in data) { //go through temperatures.
+   
+   for (const item in data) { //go through temperatures.     
       if (data.hasOwnProperty(item)) {
          const temperature = data[item];
-         if(temperature > 25) {
-            result = temperature;
-            break; //stop search when condition is found
+         if(temperature >= 25) { // Return true immediately if any temperature is greater than 25
+            return true; 
          }
       }
    }
 
-   return result;
+   return false; // Return false if no temperature is greater than 25.
 };
 
 /**
@@ -61,17 +57,14 @@ export function scanTemperature(data: any) {
  * @returns JSON-format with determined weather conditions.
  */
 export function scanSoilFrost(data: any) {
-   let result = null;
-
    for (const item in data) { //go through temperatures.
-      if (data.hasOwnProperty(item)) {
+      if (data.hasOwnProperty(item)) { // Return true immediately if any soil temperature is lower than 0
          const temperature = data[item];
          if(temperature < 0) {
-            result = temperature;
-            break; //stop search when condition is found
+            return true
          }
       }
    }
 
-   return result;
+   return false; // Return false if no temperature is lower than 0.
 };
