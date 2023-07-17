@@ -18,7 +18,7 @@ const weatherUtils_1 = require("./hourPrediction/weatherUtils");
 const currentWeather = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { longitude, latitude } = req.query;
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,snowfall&forecast_days=1`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,snowfall&timezone=auto&forecast_days=1`;
         const response = yield axios_1.default.get(url);
         const data = response.data;
         const processedData = yield (0, weatherUtils_1.processData)(data);

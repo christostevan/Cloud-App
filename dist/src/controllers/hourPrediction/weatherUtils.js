@@ -29,14 +29,7 @@ function processWeatherConditions(ID, data) {
     let weatherReport;
     if (data.snowfall[ID] >= 50) {
         weatherReport = {
-            report: 'Heavy rain',
-            timezone: 'GMT',
-            time: `${ID - 1}:00`
-        };
-    }
-    else if (data.rain[ID] >= 10) {
-        weatherReport = {
-            report: 'Heavy rain',
+            report: 'Heavy snowfall',
             timezone: 'GMT',
             time: `${ID - 1}:00`
         };
@@ -44,6 +37,13 @@ function processWeatherConditions(ID, data) {
     else if (data.rain[ID] > 0 && (data.temperature_2m[ID] <= 0)) {
         weatherReport = {
             report: 'Hail',
+            timezone: 'GMT',
+            time: `${ID - 1}:00`
+        };
+    }
+    else if (data.rain[ID] >= 10) {
+        weatherReport = {
+            report: 'Heavy rain',
             timezone: 'GMT',
             time: `${ID - 1}:00`
         };

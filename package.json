@@ -1,5 +1,5 @@
 {
-  "name": "Weather-API",
+  "name": "Cloud-App",
   "version": "1.0.0",
   "description": "Your project description",
   "main": "index.js",
@@ -12,7 +12,6 @@
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
@@ -24,9 +23,19 @@
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.3",
     "@types/supertest": "^2.0.12",
+<<<<<<< Updated upstream
     "cors": "^2.8.5",
+=======
+    "axios": "^1.4.0",
+    "axios-mock-adapter": "^1.21.5",
+>>>>>>> Stashed changes
     "express": "^4.18.2",
+    "istanbul-lib-coverage": "^3.2.0",
+    "istanbul-lib-instrument": "^5.2.1",
+    "istanbul-lib-source-maps": "^4.0.1",
+    "istanbul-reports": "^3.1.5",
     "jest": "^29.6.1",
+    "nyc": "^15.1.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"

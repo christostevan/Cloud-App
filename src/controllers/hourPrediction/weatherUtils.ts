@@ -41,19 +41,19 @@ export function processWeatherConditions(ID: number, data: any) {
     //check gathered data for weather conditions
     if (data.snowfall[ID] >= 50) {
         weatherReport = {
-            report: 'Heavy rain',
-            timezone: 'GMT',
-            time: `${ID - 1}:00`
-        };
-    } else if (data.rain[ID] >= 10) {
-        weatherReport = {
-            report: 'Heavy rain',
+            report: 'Heavy snowfall',
             timezone: 'GMT',
             time: `${ID - 1}:00`
         };
     } else if (data.rain[ID] > 0 && (data.temperature_2m[ID] <= 0)) {
         weatherReport = {
             report: 'Hail',
+            timezone: 'GMT',
+            time: `${ID - 1}:00`
+        };
+    } else if (data.rain[ID] >= 10) {
+        weatherReport = {
+            report: 'Heavy rain',
             timezone: 'GMT',
             time: `${ID - 1}:00`
         };

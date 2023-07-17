@@ -11,7 +11,7 @@ import { processData } from './hourPrediction/weatherUtils'; // import classes f
 export const currentWeather = async (req: Request, res: Response) => {
     try {
         const { longitude, latitude } = req.query;
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,snowfall&forecast_days=1`;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,rain,snowfall&timezone=auto&forecast_days=1`;
         const response = await axios.get(url);
         const data = response.data;
 
