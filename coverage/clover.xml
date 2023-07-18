@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1689592311247" clover="3.2.0">
+  <project timestamp="1689592311247" name="All files">
+    <metrics statements="33" coveredstatements="32" conditionals="14" coveredconditionals="13" methods="3" coveredmethods="3" elements="50" coveredelements="48" complexity="0" loc="33" ncloc="33" packages="2" files="2" classes="2"/>
+    <package name="controllers">
+      <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="weatherAlarm.ts" path="C:\Users\WackyMachine\Documents\GitHub\Cloud-App\src\controllers\weatherAlarm.ts">
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="controllers.hourPrediction">
+      <metrics statements="24" coveredstatements="24" conditionals="14" coveredconditionals="13" methods="2" coveredmethods="2"/>
+      <file name="weatherUtils.ts" path="C:\Users\WackyMachine\Documents\GitHub\Cloud-App\src\controllers\hourPrediction\weatherUtils.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="14" coveredconditionals="13" methods="2" coveredmethods="2"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="70" type="stmt"/>
+        <line num="14" count="70" type="stmt"/>
+        <line num="16" count="70" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="22" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="24" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="42" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="48" count="9" type="cond" truecount="4" falsecount="0"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="54" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="68" count="11" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
