@@ -1,8 +1,9 @@
 import express, { Request, Response } from 'express';
-import { currentWeather } from './controllers/weatherAlarm';
+import { nextDayWeather, currentWeather } from './controllers/weatherAlarm';
 /**
  * Application startup 
  */
+const app = express();
 const cors = require('cors');
 
 const corsOptions = {
@@ -12,7 +13,6 @@ const corsOptions = {
   };
 
   
-const app = express();
 app.use(cors(corsOptions));
 
 const port = 3000;
@@ -25,6 +25,7 @@ app.get('/', (req: Request, res: Response) => {
 //     console.log(`Server is running on port ${port}`);
 // }); 
 
+app.get('/nextDayWeather', nextDayWeather);
 app.get('/currentWeather', currentWeather);
 
 const server = app.listen(port, () => {

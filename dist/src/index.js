@@ -10,7 +10,7 @@ const port = 3000;
 app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
-app.get('/currentWeather', weatherAlarm_1.currentWeather);
+app.get('/nextDayWeather', weatherAlarm_1.nextDayWeather);
 const server = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
